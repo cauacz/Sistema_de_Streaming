@@ -8,6 +8,12 @@ public class Titulo {
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
+    // Método Contrutor de Titulo
+    public Titulo(String nome, int anoDeLancamento){
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
     public void exibirFichaTecnica(){
         System.out.println("Nome do filme: " + nome);
         System.out.println("Ano de lançamento: " + anoDeLancamento);

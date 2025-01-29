@@ -9,9 +9,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         //Criando um Filme
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O Poderoso Chefão");
-        meuFilme.setAnoDeLancamento(1970);
+        Filme meuFilme = new Filme("O Poderoso Chefão", 1970);
         meuFilme.setDuracaoEmMinutos(180);
         meuFilme.setIncluidoNoPlano(true);
 
@@ -23,9 +21,7 @@ public class Main {
         System.out.println("Média de avaliações: " + meuFilme.obterMedia());
 
         // Criando uma Série
-        Serie serie = new Serie();
-        serie.setNome("Prison Break");
-        serie.setAnoDeLancamento(2005);
+        Serie serie = new Serie("Prison Break", 2005);
         serie.setIncluidoNoPlano(true);
         serie.exibirFichaTecnica();
 
@@ -38,9 +34,7 @@ public class Main {
         System.out.println("Duração: " + serie.getDuracaoEmMinutos() + " minutos");
 
         //Criando outro  Filme
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
+        Filme outroFilme = new Filme("Avatar", 2023);
         outroFilme.setDuracaoEmMinutos(200);
         outroFilme.setIncluidoNoPlano(true);
 
@@ -68,10 +62,8 @@ public class Main {
         filtroRecomendacao.filtra(episodio);
 
         // Criando um novo filme
-        Filme filmeAlura = new Filme();
+        Filme filmeAlura = new Filme("Dogville", 2003);
         filmeAlura.setDuracaoEmMinutos(200);
-        filmeAlura.setNome("Dogville");
-        filmeAlura.setAnoDeLancamento(2003);
         filmeAlura.avaliar(7.5);
 
 
@@ -80,8 +72,13 @@ public class Main {
         listaDeFilmes.add(filmeAlura);
         listaDeFilmes.add(meuFilme);
         listaDeFilmes.add(outroFilme);
-        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
-        System.out.println("Primeiro filme de lista: " + listaDeFilmes.get(0).getNome());
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size()); // .size(): tamanho da lista
+        System.out.println("Primeiro filme da lista: " + listaDeFilmes.get(0).getNome()); // .get(0): pegar o elemento na posição 0
+
+        System.out.println(listaDeFilmes); // A impressão do ArrayList irá mostrar o toString de todos os elementos(Filme)
+        System.out.println("toString do filme: " + listaDeFilmes.get(0).toString());
+
+
 
 
     }
