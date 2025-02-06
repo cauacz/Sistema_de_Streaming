@@ -5,6 +5,8 @@ import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Listas {
     public static void main(String[] args) {
@@ -15,9 +17,7 @@ public class Listas {
         Filme filmeAlura = new Filme("Dogville", 2003);
         filmeAlura.avaliar(10);
         Serie serie = new Serie("Prison Break", 2005);
-        Filme filme3 = filmeAlura;
 
-        filme3.setNome("Nimguem te perguntou");
 
         ArrayList<Titulo> lista = new ArrayList<>();
         lista.add(filmeAlura);
@@ -33,9 +33,22 @@ public class Listas {
             if(item instanceof Filme filme){ // se item for uma instância de Filme
                 System.out.println("Classificação: " + filme.getClassificacao());
             }
-
-
         }
+
+        // Ordenação de Listas:
+        // - Lista de Artistas
+        List<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Pablo Picasso");
+        buscaPorArtista.add("Vincent van Gogh");
+        buscaPorArtista.add("Leonardo da Vinci");
+        System.out.println("Lista não ordenada: " + buscaPorArtista);
+
+        Collections.sort(buscaPorArtista);
+        System.out.println("Lista ordenada: " + buscaPorArtista);
+
+        System.out.println("Lista de Titulos ordenada:");
+        Collections.sort(lista);
+        System.out.println(lista);
 
     }
 }
